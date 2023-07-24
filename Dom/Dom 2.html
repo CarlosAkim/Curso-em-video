@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        div#area{
+            font: normal 20px arial;
+            background: green ;
+            color: white;
+            width: 200px; /* width é largura */
+            height: 180px; /*height é altura*/
+            line-height: 200px; /*posição das palavras */
+            text-align: center; /*posição do texto*/
+        }
+       
+    </style>
+<body>
+    <div id="area">
+        interaja...
+    </div>
+    <script>
+        var a = document.querySelector('div#area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrou)
+        a.addEventListener('mouseleave',saiu)
+        
+        function clicar(){
+            a.innerText = 'Clicou aqui!'
+            a.style.background = 'red'
+        }
+        function entrou(){
+            a.innerText = 'entrou Aqui!'
+            a.style.background = 'blue'
+        }
+        function saiu(){
+           a.innerText = 'saiu daqui!'
+           a.style.background = 'green'
+        }
+    </script>
+</body>
+</html>

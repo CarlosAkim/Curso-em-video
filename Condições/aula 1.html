@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testando a aula na pratica</title>
+</head>
+    
+<body>
+    <h1>Sistema de Nacionalização</h1>
+    Qual país voce nascer? <input type="txt" name="txt" id="txt">
+    <input type="button" value="Verificar" onclick="clicar()"></input>
+    <div id="res"></div>
+</body>
+<script>
+    function clicar(){
+        var ve = document.querySelector('input#txt')       
+        var cal = String(ve.value)
+        var res = document.querySelector('div#res')
+        if (cal == "Brasil"){
+            res.innerHTML += "<p>Você é <strong>Brasileiro</strong></p>"
+        } else if (cal == ""){
+            res.innerHTML+= ""
+        } else {
+            res.innerHTML += "<p>Você é um gringo <strong>safado.</strong><p>"
+        }
+
+    }
+</script>
+</html>
