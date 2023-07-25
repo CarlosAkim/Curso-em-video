@@ -34,6 +34,8 @@ function Adicionar(){
     numero.value = ''
     //Comando focus serve para fazer como se o cursor do mouse estive clicado novamente no local.
     numero.focus() 
+    res.innerHTML=""
+
 }
 
 function finalizar(){
@@ -41,12 +43,18 @@ function finalizar(){
         alert('Não temos valor para finalizar')
     }else{
         valor.sort()
-        res.innerHTML = `Ao todo foram adicionado ${valor.length}`
-        res.innerHTML = `O menor valor adicionado foi ${valor[0]}`
-        for (var pos in valor){
-            pos+=valor[pos]
+        let t = valor[0]
+        let soma = 0
+        res.innerHTML = `<p>Ao todo foram adicionado ${valor.length}</p>`
+        res.innerHTML += `<p>O menor valor adicionado foi ${valor[0]}</p>`
+        for (let pos in valor){
+            soma += valor[pos]
+            if (valor[pos] > t){
+                t = valor[pos]
+            }
         }
-        alert(pos)
+        res.innerHTML+=`<p>O maior valor adicionado foi ${t}</p>`
+        res.innerHTML+=`<p>A soma dos valores foi ${soma}</p>`
     }
 
 
