@@ -43,9 +43,10 @@ function finalizar(){
         alert('Não temos valor para finalizar')
     }else{
         valor.sort()
+        let tot = valor.length
         let t = valor[0]
         let soma = 0
-        res.innerHTML = `<p>Ao todo foram adicionado ${valor.length}</p>`
+        res.innerHTML = `<p>Ao todo foram adicionado ${tot}</p>`
         res.innerHTML += `<p>O menor valor adicionado foi ${valor[0]}</p>`
         for (let pos in valor){
             soma += valor[pos]
@@ -53,8 +54,10 @@ function finalizar(){
                 t = valor[pos]
             }
         }
+        let media = soma/tot
         res.innerHTML+=`<p>O maior valor adicionado foi ${t}</p>`
         res.innerHTML+=`<p>A soma dos valores foi ${soma}</p>`
+        res.innerHTML+=`<p>A média dos valores adicionados foi ${media}</p>`
     }
 
 
